@@ -34,3 +34,12 @@
 #liveToastBtn {
   margin-left:50%;
 }
+
+.login-dropdown-menu {
+  padding:15px;
+}
+
+.login-dropdown-menu input {
+  padding:5px;
+  margin:5px;
+}
