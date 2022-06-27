@@ -43,6 +43,8 @@
   padding:5px;
   margin:5px;
 }
-.login-button {
-  margin-left:auto;
+
+.dropdown-menu.show {
+  display: flex;
+  flex-direction: column;
 }
