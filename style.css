@@ -1,7 +1,8 @@
 
-
-.main-content {
-  width:90%;
+@media screen and (min-width: 480px) {
+  .main-content {
+    width:90%;
+  }
 }
 
 .content {
