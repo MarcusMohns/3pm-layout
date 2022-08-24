@@ -5,13 +5,6 @@
   }
 }
 
-.content {
-    display:flex;
-    height:400px;
-    background-color:grey;
-    margin:50px;
-}
-
 .carousel-container {
     display:flex;
     align-items:center;
