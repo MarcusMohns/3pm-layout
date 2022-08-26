@@ -1,48 +1,7 @@
 
-@media screen and (min-width: 480px) {
-  .main-content {
-    width:90%;
-  }
-}
-
-.carousel-container {
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-}
-
-  .carousel {
-    width:25%;
-    margin: auto;
-    margin-top:25px;
-  }
-
-
-.toast-logo {
-  height: 25px;
-  width: 50px;
-
-}
 
 #liveToastBtn {
   margin-left:50%;
 }
 
-.login-dropdown-menu {
-  padding:15px;
-}
 
-.login-dropdown-menu input {
-  padding:5px;
-  margin:5px;
-}
-
-.dropdown-menu.show {
-  display: flex;
-  flex-direction: column;
-}
-
-#login-btn {
-  margin: 5px 0px;
-}
