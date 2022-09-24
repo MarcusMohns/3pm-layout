@@ -1,3 +1,33 @@
+<% set oEchoForetag = Server.CreateObject("EchoAdmin.Foretag") bResult =
+oEchoForetag.bGet("3pm") session("sKatalog") = "" if
+Request.querystring("SysGrp") <> "" then session("sSysGrp") =
+Request.querystring("SysGrp") If session("sSysGrp") = "Exakt" then
+session("sInfo") = "Exakt" ElseIf session("sSysGrp") = "Elegant" then
+session("sInfo") = "Elegant" ElseIf session("sSysGrp") = "Finans" then
+session("sInfo") = "Finans" ElseIf session("sSysGrp") = "Excellent" then
+session("sInfo") = "Excellent" ElseIf session("sSysGrp") = "Taxi" then
+session("sInfo") = "Taxi" ElseIf session("sSysGrp") = "Express" then
+session("sInfo") = "Express" ElseIf session("sSysGrp") = "Expert" then
+session("sInfo") = "Expert" Else session("sInfo") = "" end if End if
+session("sKatalog") = "" session("sKontaktaMig") = "" if
+Request.querystring("SysGrp") = "Blank" then session("sSysGrp") = "" if
+Request.querystring("Info") <> "" then session("sInfo") =
+Request.querystring("Info") if Request.querystring("SysGrp") = "Blank" then
+session("sInfo") = "" Select Case session("sInfo") Case
+"FtgSma","FtgStor","FtgFinas","FtgTaxi","FtgSam","FtgSys","FtgAdmin"
+session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
+= "Ater" then If session("sInfo") = "" then session("sSysGrp") = "" %>
+<html>
+  <head> </head>
+  <body>
+    <script language="JavaScript" type="text/javascript">
+      // <!--
+      history.go(-2);
+      // -->
+    </script>
+  </body>
+</html>
+<% end if %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,96 +53,19 @@
     />
     <title>3pm it AB - Framtiden är här</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
   </head>
-  <body>
+  <body class="max-vw-100 overflow-x-hidden">
     <script src="script.js"></script>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <a class="navbar-brand" href="#"
-        ><img src="images/Logga.png" class="rounded me-2" alt="logo"
-      /></a>
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item active">
-          <a class="nav-link" href="#"
-            >Hem <span class="sr-only">(current)</span></a
-          >
-        </li>
-        <li class="nav-item">
-          <div class="dropdown show">
-            <a
-              class="dropdown-toggle nav-link"
-              href="#"
-              role="button"
-              id="dropdownMenuLink"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-              >3pm</a
-            >
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="#">Kontakt</a>
-              <a class="dropdown-item" href="#">Vår affärsidé</a>
-              <a class="dropdown-item" href="#">Om säkerhet</a>
-            </div>
-          </div>
-        </li>
-        <li class="nav-item">
-          <div class="dropdown show">
-            <a
-              class="dropdown-toggle nav-link"
-              href="#"
-              role="button"
-              id="dropdownMenuLink"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-              >Info</a
-            >
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="#">System</a>
-              <a class="dropdown-item" href="#">Tjänster</a>
-              <a class="dropdown-item" href="#">Nyheter</a>
-              <a class="dropdown-item" href="#">Frågor och Förslag</a>
-              <a class="dropdown-item" href="#">Allmänna Villkor</a>
-              <a class="dropdown-item" href="#">Beställning</a>
-              <a class="dropdown-item" href="#">Kalkyl och Pris</a>
-              <a class="dropdown-item" href="#">Sänd Information</a>
-            </div>
-          </div>
-        </li>
-        <li class="nav-item">
-          <div class="dropdown show">
-            <a
-              class="dropdown-toggle nav-link"
-              href="#"
-              role="button"
-              id="dropdownMenuLink"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-              >System</a
-            >
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="#">System</a>
-              <a class="dropdown-item" href="#">Tjänster</a>
-              <a class="dropdown-item" href="#">Nyheter</a>
-              <a class="dropdown-item" href="#">Frågor och Förslag</a>
-              <a class="dropdown-item" href="#">Allmänna Villkor</a>
-              <a class="dropdown-item" href="#">Beställning</a>
-              <a class="dropdown-item" href="#">Kalkyl och Pris</a>
-              <a class="dropdown-item" href="#">Sänd Information</a>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href="#"
+        <a class="navbar-brand" href="../index.asp?SysGrp=Blank"
           ><img src="images/Logga.png" class="rounded me-2" alt="logo"
         /></a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
-            <a class="nav-link" href="#"
+            <a class="nav-link" href="../index.asp?SysGrp=Blank"
               >Hem <span class="sr-only">(current)</span></a
             >
           </li>
@@ -129,9 +82,15 @@
                 >3pm</a
               >
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="#">Kontakt</a>
-                <a class="dropdown-item" href="#">Vår affärsidé</a>
-                <a class="dropdown-item" href="#">Om säkerhet</a>
+                <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m11"
+                  >Kontakt</a
+                >
+                <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m12"
+                  >Vår affärsidé</a
+                >
+                <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m13"
+                  >Om säkerhet</a
+                >
               </div>
             </div>
           </li>
@@ -148,14 +107,30 @@
                 >Info</a
               >
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="#">System</a>
-                <a class="dropdown-item" href="#">Tjänster</a>
-                <a class="dropdown-item" href="#">Nyheter</a>
-                <a class="dropdown-item" href="#">Frågor och Förslag</a>
-                <a class="dropdown-item" href="#">Allmänna Villkor</a>
-                <a class="dropdown-item" href="#">Beställning</a>
-                <a class="dropdown-item" href="#">Kalkyl och Pris</a>
-                <a class="dropdown-item" href="#">Sänd Information</a>
+                <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m21"
+                  >System</a
+                >
+                <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m22"
+                  >Tjänster</a
+                >
+                <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m23"
+                  >Nyheter</a
+                >
+                <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m24"
+                  >Frågor och Förslag</a
+                >
+                <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m25"
+                  >Allmänna Villkor</a
+                >
+                <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m26"
+                  >Beställning</a
+                >
+                <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m27"
+                  >Kalkyl och Pris</a
+                >
+                <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m28"
+                  >Sänd Information</a
+                >
               </div>
             </div>
           </li>
@@ -175,38 +150,44 @@
                 <a class="dropdown-item" href="#">e-xakt »</a>
                 <ul class="dropdown-menu dropdown-submenu">
                   <li>
-                    <a class="dropdown-item" href="#">System</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">Bokföring</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#"
-                      >Fakturering<!-- &raquo; --></a
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m31"
+                      >System</a
                     >
-                    <!-- <ul class="dropdown-menu dropdown-submenu">
-                          <li>
-                            <a class="dropdown-item" href="#">Multi level 1</a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item" href="#">Multi level 2</a>
-                          </li>
-                        </ul> -->
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Fast Fakturering</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m32"
+                      >Bokföring</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Kundreskontra</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m33"
+                      >Fakturering</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Lev.reskontra</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m34"
+                      >Fast Fakturering</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Medlemsregister</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m35"
+                      >Kundreskontra</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Hyresdebitering</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m36"
+                      >Lev.reskontra</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m37"
+                      >Medlemsregister</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m38"
+                      >Hyresdebitering</a
+                    >
                   </li>
                 </ul>
               </li>
@@ -214,44 +195,54 @@
                 <a class="dropdown-item" href="#">e-legant »</a>
                 <ul class="dropdown-menu dropdown-submenu">
                   <li>
-                    <a class="dropdown-item" href="#">System</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">Redovisning</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#"
-                      >Fakturering<!-- &raquo; --></a
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m41"
+                      >System</a
                     >
-                    <!-- <ul class="dropdown-menu dropdown-submenu">
-                          <li>
-                            <a class="dropdown-item" href="#">Multi level 1</a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item" href="#">Multi level 2</a>
-                          </li>
-                        </ul> -->
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Fsat Fakturering</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m42"
+                      >Redovisning</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">e-Fakturering</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m43"
+                      >Fakturering</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Kundreskontra</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m44"
+                      >Fsat Fakturering</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Lev.reskontra</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m45"
+                      >e-Fakturering</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Order</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m46"
+                      >Kundreskontra</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Inköp</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m47"
+                      >Lev.reskontra</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Lager</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m48"
+                      >Order</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m49"
+                      >Inköp</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m410"
+                      >Lager</a
+                    >
                   </li>
                 </ul>
               </li>
@@ -259,32 +250,34 @@
                 <a class="dropdown-item" href="#">e-finans »</a>
                 <ul class="dropdown-menu dropdown-submenu">
                   <li>
-                    <a class="dropdown-item" href="#">System</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">Finans</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#"
-                      >Factoring<!-- &raquo; --></a
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m51"
+                      >System</a
                     >
-                    <!-- <ul class="dropdown-menu dropdown-submenu">
-                          <li>
-                            <a class="dropdown-item" href="#">Multi level 1</a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item" href="#">Multi level 2</a>
-                          </li>
-                        </ul> -->
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Kontrakt</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m52"
+                      >Finans</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">ExpressLån</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m53"
+                      >Factoring</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Resk.Finans</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m54"
+                      >Kontrakt</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m55"
+                      >ExpressLån</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m56"
+                      >Resk.Finans</a
+                    >
                   </li>
                 </ul>
               </li>
@@ -292,35 +285,39 @@
                 <a class="dropdown-item" href="#">e-xcellent »</a>
                 <ul class="dropdown-menu dropdown-submenu">
                   <li>
-                    <a class="dropdown-item" href="#">System</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">CRM</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#"
-                      >Ärendehantering<!-- &raquo; --></a
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m61"
+                      >System</a
                     >
-                    <!-- <ul class="dropdown-menu dropdown-submenu">
-                          <li>
-                            <a class="dropdown-item" href="#">Multi level 1</a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item" href="#">Multi level 2</a>
-                          </li>
-                        </ul> -->
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Inkassosystem</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m62"
+                      >CRM</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Tidrapportering</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m63"
+                      >Ärendehantering</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Lön</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m67"
+                      >Inkassosystem</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Reseräkningar</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m64"
+                      >Tidrapportering</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m65"
+                      >Lön</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m66"
+                      >Reseräkningar</a
+                    >
                   </li>
                 </ul>
               </li>
@@ -328,44 +325,54 @@
                 <a class="dropdown-item" href="#">e-xpress »</a>
                 <ul class="dropdown-menu dropdown-submenu">
                   <li>
-                    <a class="dropdown-item" href="#">e-Order</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">e-Inköp</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#"
-                      >e-Upload<!-- &raquo; --></a
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m71"
+                      >e-Order</a
                     >
-                    <!-- <ul class="dropdown-menu dropdown-submenu">
-                          <li>
-                            <a class="dropdown-item" href="#">Multi level 1</a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item" href="#">Multi level 2</a>
-                          </li>
-                        </ul> -->
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">e-Kund</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m72"
+                      >e-Inköp</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">e-Kund Godkänn</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m73"
+                      >e-Upload</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">e-Lev</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m74"
+                      >e-Kund</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">e-Lev Kontroll</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m80"
+                      >e-Kund Godkänn</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">e-Återförsäljare</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m75"
+                      >e-Lev</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Bokningssystem</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m76"
+                      >e-Lev Kontroll</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">KoncernRpt</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m77"
+                      >e-Återförsäljare</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m78"
+                      >Bokningssystem</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m79"
+                      >KoncernRpt</a
+                    >
                   </li>
                 </ul>
               </li>
@@ -373,29 +380,29 @@
                 <a class="dropdown-item" href="#">e-taxi »</a>
                 <ul class="dropdown-menu dropdown-submenu">
                   <li>
-                    <a class="dropdown-item" href="#">System</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">Taxi</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#"
-                      >Taxi Anställda<!-- &raquo; --></a
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m81"
+                      >System</a
                     >
-                    <!-- <ul class="dropdown-menu dropdown-submenu">
-                          <li>
-                            <a class="dropdown-item" href="#">Multi level 1</a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item" href="#">Multi level 2</a>
-                          </li>
-                        </ul> -->
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Taxi BC</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m82"
+                      >Taxi</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Lediga Pass</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m83"
+                      >Taxi Anställda</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m84"
+                      >Taxi BC</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m85"
+                      >Lediga Pass</a
+                    >
                   </li>
                 </ul>
               </li>
@@ -403,10 +410,14 @@
                 <a class="dropdown-item" href="#">e-xpert »</a>
                 <ul class="dropdown-menu dropdown-submenu">
                   <li>
-                    <a class="dropdown-item" href="#">Systemägare</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m91"
+                      >Systemägare</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">e-Återförsäljare</a>
+                    <a class="dropdown-item" href="RunMeny.asp?VisaMeny=m92"
+                      >e-Återförsäljare</a
+                    >
                   </li>
                 </ul>
               </li>
@@ -415,23 +426,32 @@
         </ul>
         <div class="mr-5 d-flex mt-2">
           <p class="text-muted mx-2 font-italic" style="font-size: 0.9rem">
-            Dalavägen 13 A
+            <%=oEchoForetag.Namn%>
           </p>
           <p class="text-muted mx-2 font-italic" style="font-size: 0.9rem">
-            192 77 Sollentuna
+            <%=oEchoForetag.Adr1%>
           </p>
           <p class="text-muted mx-2 font-italic" style="font-size: 0.9rem">
-            Sverige
+            <%=oEchoForetag.PostNr%>
+          </p>
+          <p class="text-muted mx-2 font-italic" style="font-size: 0.9rem">
+            <%=oEchoForetag.Land%>
           </p>
         </div>
 
-        <a role="button" class="btn btn-outline-success" href=""> Logga in </a>
+        <a
+          role="button"
+          class="btn btn-outline-success"
+          href="/Disp/loginHand.asp"
+        >
+          Logga in
+        </a>
       </div>
     </nav>
     <div
       class="container-fluid main-content p-0 align-items-center justify-content-center"
     >
-      <div
+      <section
         class="container-fluid row justify-content-around p-5 m-0"
         style="
           background-image: url('https://images.unsplash.com/photo-1567413010197-7b436a170e8d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2128&amp;q=80');
@@ -446,9 +466,12 @@
             Vår affärsidé är att erbjuda nätverksbaserade affärslösningar som
             skapar mervärden för dig som kund. Genom våra lösningar uppnår du
             större effektivitet och därmed lägre kostnader. Vi kan också erbjuda
-            <a href="">tjänster</a> (<a href="">ex.v. Bokföring</a>,
-            <a href="">Fakturering</a>, <a href="">Scanning av lev.fakturor</a>)
-            som gör att du kan fokusera på din kärnversamhet medan vi sköter
+            <a href="/index.asp?Info=FtgAdmin">tjänster</a> (<a
+              href="/index.asp?Info=FtgAdmin"
+              >ex.v. Bokföring</a
+            >, <a href="/index.asp?Info=FtgAdmin">Fakturering</a>,
+            <a href="/index.asp?Info=FtgAdmin">Scanning av lev.fakturor</a>) som
+            gör att du kan fokusera på din kärnversamhet medan vi sköter
             administrationen.
             <b>Vi erbjuder dig flexibla lösningar till bra pris.</b> Vi har
             system som riktar sig till olika typer av företag men också system
@@ -457,24 +480,28 @@
           <button class="btn btn-success btn-lg">Börja här</button>
         </div>
         <div class="col-5"></div>
-      </div>
-      <div
+      </section>
+      <section
         class="p-5 column justify-content-center align-items-center"
         style="min-height: 100vh"
       >
-        <div class="col d-flex flex-row align-items-center m-5">
+        <div
+          class="col d-flex flex-row align-items-center m-5"
+          style="overflow-x: hidden"
+        >
           <img
-            src="https://cdn.icon-icons.com/icons2/3637/PNG/512/mobile_banking_banking_investment_business_finance_icon_227634.png"
+            src="images/detmindreföretaget.jpg"
             class="rounded mx-auto d-block"
             alt="..."
-            style="height: 128px"
+            style="height: 256px"
           />
           <div class="p-5 ml-5 col-10">
             <h2>Det Mindre Företaget</h2>
             <p class="text-break col-10">
               Den mindre företagaren kan genom att kombinera våra
-              <a href="">system</a> med vårt <a href="">tjänsteutbud</a> få en
-              mycket effektiv administration Förutom de tjänster som finns
+              <a href="/index.asp?Info=Exakt&SysGrp=Exakt">system</a> med vårt
+              <a href="/index.asp?Info=FtgAdmin">tjänsteutbud</a>
+              få en mycket effektiv administration Förutom de tjänster som finns
               beskrivna under "tjänsteutbud" kan man också koppla sig mot ett
               factoringbolag och med en enkel knapptryckning "sälja" en (eller
               flera) fakturor. Vill du bevara din goda nattsömn - överlåt de
@@ -483,18 +510,26 @@
               rätt tid. Får du inte betalt i tid - utnyttja vår inkassoservice -
               allt som krävs är en knapptryckning. Prisexempel: Fast pris 200:00
               kr / mån för en normal egenföretagare. Man får då tillgång till
-              systemen (inom exakt) Bokföring, Fakturering, Kund- och
-              Lev.Reskontra. Vill du utnyttja vårt tjänsteutbud - kontakta oss
-              så diskuterar vi fram en lösning som är anpassad till era behov.
+              systemen
+              <a href="/index.asp?Info=Exakt&SysGrp=Exakt">(inom exakt)</a>
+              Bokföring, Fakturering, Kund- och Lev.Reskontra. Vill du utnyttja
+              vårt
+              <a href="/index.asp?Info=FtgAdmin"> tjänsteutbud</a>
+              -
+              <a href="/Disp/11KontaktaMig.asp">kontakta oss</a> så diskuterar
+              vi fram en lösning som är anpassad till era behov.
             </p>
           </div>
         </div>
-        <div class="col d-flex flex-row align-items-center m-5">
+        <div
+          class="col d-flex flex-row align-items-center m-5"
+          style="overflow-x: hidden"
+        >
           <img
-            src="https://cdn.icon-icons.com/icons2/3637/PNG/512/credit_card_banking_investment_business_finance_icon_227626.png"
+            src="images/detstörreföretaget.jpg"
             class="rounded mx-auto d-block"
             alt="..."
-            style="height: 128px"
+            style="height: 256px"
           />
           <div class="p-5 ml-5 col-10">
             <h2>Det Större Företaget</h2>
@@ -506,29 +541,37 @@
               helhetssynen i våra system kommer att avsevärt öka effektiviteten
               i er organisation. Kommunikation är en strategisk resurs i våra
               lösningar. Att effektivisera samarbetet mellan era
-              <a href="">kunder</a>, <a href="">leverantörer</a> eller
-              <a href="">tjänsteproducenter</a> kan ha avgörande betydelse för
-              er konkurranskraft. Med hjälp av vårt
-              <a href="">ärendehanteringssystem</a> kan du bygga processer som
-              omfattar personer inom eller utanför den egna organisationen.
-              Genom att kombinera våra system <a href="">(inom elegant)</a> med
-              vårt <a href="">tjänsteutbud</a> och tillsammans med ett fördjupat
-              samarbete med övriga partners uppnås stora rationaliseringar.
-              Centralt för elegantsystemen är <a href="">Order</a> med
-              <a href="">e-Handel</a> och <a href="">Inköpssystem</a> med
-              <a href="">e-Inköp</a>. Systemen stödjer informationshanteringen
-              från Fabrik till Konsument. Leverantörer och Kunder kan i
-              samarbete använda systemen och därmed uppnå avsevärt högre
-              effektivitet i Logistikkedjan. Målet är: Ersätt fysisk
-              distribution med information! <a href="">Fakturering</a> kan ske
-              på tre sätt:
+              <a href="/index.asp?Info=FtgE_Order">kunder</a>,
+              <a href="/index.asp?Info=FtgE_Order">leverantörer</a> eller
+              <a href="/index.asp?Info=FtgAdmin">tjänsteproducenter</a> kan ha
+              avgörande betydelse för er konkurranskraft. Med hjälp av vårt
+              <a href="/index.asp?Info=FtgEx_Arende">ärendehanteringssystem</a>
+              kan du bygga processer som omfattar personer inom eller utanför
+              den egna organisationen. Genom att kombinera våra system
+              <a href="/index.asp?Info=Elegant&SysGrp=Elegant"
+                >(inom elegant)</a
+              >
+              med vårt <a href="/index.asp?Info=FtgAdmin">tjänsteutbud</a> och
+              tillsammans med ett fördjupat samarbete med övriga partners uppnås
+              stora rationaliseringar. Centralt för elegantsystemen är
+              <a href="/index.asp?Info=FtgEl_Order">Order</a> med
+              <a href="/index.asp?Info=FtgE_Order">e-Handel</a> och
+              <a href="/index.asp?Info=FtgEl_Inkop">Inköpssystem</a> med
+              <a href="/index.asp?Info=FtgE_Inkop">e-Inköp</a>. Systemen stödjer
+              informationshanteringen från Fabrik till Konsument. Leverantörer
+              och Kunder kan i samarbete använda systemen och därmed uppnå
+              avsevärt högre effektivitet i Logistikkedjan. Målet är: Ersätt
+              fysisk distribution med information!
+              <a href="/index.asp?Info=FtgEl_Fakt">Fakturering</a> kan ske på
+              tre sätt:
             </p>
             <ul>
               <li>Manuell registrering</li>
               <li>Via ordersystemet</li>
               <li>
-                Med hjälp av <a href="">Fast fakturering</a> - regelbudet
-                återkommande fakturering
+                Med hjälp av
+                <a href="/index.asp?Info=FtgEl_Fast">Fast fakturering</a> -
+                regelbudet återkommande fakturering
               </li>
             </ul>
             <p class="col-10">
@@ -536,30 +579,113 @@
               användas för prenumerationer, hyresdebeteringar och
               medlemsavgifter. Du avgör själv i vilken månad faktureringen skall
               göras och med möjlighet att variera beloppen. Utmärkta möjligheter
-              finns att följa <a href="">lönsamheten</a> inom olika delar av
-              verksamheten. Du väljer fritt vilka begrepp som du vill använda i
-              systemet för uppföljning och kontroll. Resultat (Intäkter och
-              Varukostnader) kan ses på t.ex. Kunder, Produkter eller
-              Ansvarsområden. <a href="">Kund-</a> och
-              <a href="">Leverantörs-</a> reskontran ger dig översikt och
-              kontroll på likviditeten. Du kan dessutom skapar en
-              likviditetprognos som ger dig beräknad likviditet per dag.
+              finns att följa
+              <a href="/index.asp?Info=FtgEl_Red">lönsamheten</a> inom olika
+              delar av verksamheten. Du väljer fritt vilka begrepp som du vill
+              använda i systemet för uppföljning och kontroll. Resultat
+              (Intäkter och Varukostnader) kan ses på t.ex. Kunder, Produkter
+              eller Ansvarsområden.
+              <a href="/index.asp?Info=FtgEl_Kund">Kund-</a> och
+              <a href="/index.asp?Info=FtgEl_Lev">Leverantörs-</a> reskontran
+              ger dig översikt och kontroll på likviditeten. Du kan dessutom
+              skapar en likviditetprognos som ger dig beräknad likviditet per
+              dag.
             </p>
           </div>
         </div>
-      </div>
-      <div
-        class="p-5 column justify-content-center align-items-center"
-        style="min-height: 100vh; background-color: RGBA(121, 188, 109, 0.2)"
+      </section>
+      <section
+        class="container p-5 column justify-content-center align-items-center"
+        style="
+          min-width: 100vw;
+          min-height: 70vh;
+          background-color: RGBA(121, 188, 109, 0.2);
+        "
       >
-        <div class="col d-flex flex-row align-items-center m-5">
+        <div class="container-fluid">
+          <div class="row justify-content-center" style="min-width: 100%">
+            <div class="card col-3.5 m-auto system-cards" style="width: 18rem">
+              <img
+                class="card-img-top"
+                src="images/finansföretaget.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Finansföretaget</h5>
+                <p class="card-text">
+                  Finansbranchen är hårt konkurrensutsatt. Detta kräver
+                  effektiva system - ofta med specifik funktionalitet. Våra
+                  system lever upp till kraven.
+                </p>
+                <a href="#" class="btn btn-primary">Läs Mer</a>
+              </div>
+            </div>
+
+            <div class="card col-3.5 m-auto system-cards" style="width: 18rem">
+              <img
+                class="card-img-top"
+                src="images/taxiåkeriet.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Taxiåkeriet</h5>
+                <p class="card-text">
+                  Taxisystemet är helt anpassat till ett modernt taxiåkeris
+                  behov av kostnadsuppföljning, körpassplanering, lönebetalning
+                  och avräkningar. Systemet passar både för en- och
+                  flerbilsåkeri.
+                </p>
+                <a href="#" class="btn btn-primary">Läs Mer</a>
+              </div>
+            </div>
+            <div class="card col-3.5 m-auto system-cards" style="width: 18rem">
+              <img
+                class="card-img-top"
+                src="images/ärendehantering.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Ärendehantering</h5>
+                <p class="card-text">
+                  Ibland passar inte en struktur som skapats i ett datasystem.
+                  Organisation eller arbetsmässiga sekvenser passar inte alltid
+                  standardsystems struktur. 3pm's ärendehanteringssystem är
+                  lösningen på detta.
+                </p>
+                <a href="#" class="btn btn-primary">Läs Mer</a>
+              </div>
+            </div>
+            <div class="card col-3.5 m-auto system-cards" style="width: 18rem">
+              <img
+                class="card-img-top"
+                src="images/crm.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">CRM</h5>
+                <p class="card-text">
+                  Ett system som riktar sig till dom som behöver skicka brev
+                  eller mail till ex.v. kunder, leverantörer, personal mm.
+                  Adressregister från externa källor men också egna register kan
+                  behandlas.
+                </p>
+                <a href="#" class="btn btn-primary">Läs Mer</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div
+          class="col d-flex flex-row align-items-center m-5"
+          style="overflow-x: hidden"
+        >
           <img
-            src="https://cdn.icon-icons.com/icons2/3637/PNG/512/gemstone_banking_investment_business_finance_icon_227630.png"
+            src="images/finansföretaget.jpg"
             class="rounded mx-auto d-block"
             alt="..."
-            style="height: 128px"
+            style="height: 256px"
           />
-          <div class="p-5 ml-5">
+          <div class="p-5">
             <h2>Finansföretaget</h2>
             <p class="text-break">
               Finansbranchen är hårt konkurrensutsatt. Detta kräver effektiva
@@ -580,26 +706,31 @@
               <li>
                 Reskontrafinansiering: Belåning av hela eller delar av en
                 reskontra. Ränta beräknas som ett dagssaldo.
-                <a href="">Läs Mer...</a>
+                <a href="/index.asp?Info=Fi_Fin&SysGrp=Finans">Läs Mer...</a>
               </li>
               <li>
                 Factoring: Belåning per varje faktura. Ränta beräknas per
-                faktura. <a href="">Läs Mer...</a>
+                faktura.
+                <a href="/index.asp?Info=Fi_Fact&SysGrp=Finans">Läs Mer...</a>
               </li>
               <li>
                 Kontrakt: Hanterar lån med delbetalningar. Låneformer kan vara
                 Avbetalning, Hyra, Leasing m.m. Ränta beräknas på restskuld
-                eller med annuitet <a href="">Läs Mer...</a>
+                eller med annuitet
+                <a href="/index.asp?Info=Fi_Kont&SysGrp=Finans">Läs Mer...</a>
               </li>
             </ul>
           </div>
         </div>
-        <div class="col d-flex flex-row align-items-center m-5">
+        <div
+          class="col d-flex flex-row align-items-center m-5"
+          style="overflow-x: hidden"
+        >
           <img
-            src="https://cdn.icon-icons.com/icons2/3637/PNG/512/gemstone_banking_investment_business_finance_icon_227630.png"
+            src="images/taxiåkeriet.jpg"
             class="rounded mx-auto d-block"
             alt="..."
-            style="height: 128px"
+            style="height: 256px"
           />
           <div class="p-5 ml-5">
             <h2>Taxiåkeriet</h2>
@@ -618,61 +749,35 @@
             </p>
             <p>Följande system ingår i Taxisystemen.</p>
             <ul>
-              <li>Taxi - Grundsystemet <a href="">Läs Mer...</a></li>
-              <li>Taxi Anställda <a href="">Läs Mer...</a></li>
-              <li>Taxi BC <a href="">Läs Mer...</a></li>
-              <li>Taxi Lediga Pass <a href="">Läs Mer...</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col d-flex flex-row align-items-center m-5">
-          <img
-            src="https://cdn.icon-icons.com/icons2/3637/PNG/512/gemstone_banking_investment_business_finance_icon_227630.png"
-            class="rounded mx-auto d-block"
-            alt="..."
-            style="height: 128px"
-          />
-          <div class="p-5 ml-5">
-            <h2>Finansföretaget</h2>
-            <p class="text-break">
-              Finansbranchen är hårt konkurrensutsatt. Detta kräver effektiva
-              system - ofta med specifik funktionalitet. Våra system lever upp
-              till kraven. Alla finanssystem bygger på förutsättningen att det
-              kan finnas tre parter som samarbetar. Dessa tre parter är:
-              Finansbolaget Betalaren av lånet Diskontör - den som säljer
-              (belånar) fakturan eller avtalet Information mellan dessa parter
-              överförs via systemet. Alla parter har alltid samma information
-              och alltid informerade om senaste status. Naturligtvis fungerar
-              systemen även utan att det finns en "Diskontör" med. Finansystemen
-              är moduluppbyggda på ett sådant sätt som gör det lätt att
-              installera och produktionssätta. Ordval och definitioner kan
-              skilja - därför en beskrivning av vad våra systemnamn står för.
-            </p>
-            <p>Följande system ingår i finansgruppen:</p>
-            <ul>
               <li>
-                Reskontrafinansiering: Belåning av hela eller delar av en
-                reskontra. Ränta beräknas som ett dagssaldo.
-                <a href="">Läs Mer...</a>
+                Taxi - Grundsystemet
+                <a href="/index.asp?Info=Tx_Taxi&SysGrp=Taxi">Läs Mer...</a>
               </li>
               <li>
-                Factoring: Belåning per varje faktura. Ränta beräknas per
-                faktura. <a href="">Läs Mer...</a>
+                Taxi Anställda
+                <a href="/index.asp?Info=Tx_Anst&SysGrp=Taxi">Läs Mer...</a>
               </li>
               <li>
-                Kontrakt: Hanterar lån med delbetalningar. Låneformer kan vara
-                Avbetalning, Hyra, Leasing m.m. Ränta beräknas på restskuld
-                eller med annuitet <a href="">Läs Mer...</a>
+                Taxi BC
+                <a href="/index.asp?Info=Tx_BC&SysGrp=Taxi">Läs Mer...</a>
+              </li>
+              <li>
+                Taxi Lediga Pass
+                <a href="/index.asp?Info=Tx_LP&SysGrp=Taxi">Läs Mer...</a>
               </li>
             </ul>
           </div>
         </div>
-        <div class="col d-flex flex-row align-items-center m-5">
+
+        <div
+          class="col d-flex flex-row align-items-center m-5"
+          style="overflow-x: hidden"
+        >
           <img
-            src="https://cdn.icon-icons.com/icons2/3637/PNG/512/gemstone_banking_investment_business_finance_icon_227630.png"
+            src="images/ärendehantering.jpg"
             class="rounded mx-auto d-block"
             alt="..."
-            style="height: 128px"
+            style="height: 256px"
           />
           <div class="p-5 ml-5">
             <h2>Ärendehantering</h2>
@@ -694,15 +799,18 @@
               <li>vid felrapportering</li>
               <li>vid ärendehantering i mydighetsutövande</li>
             </ul>
-            <a href="">Läs Mer...</a>
+            <a href="/index.asp?Info=FtgEx_Arende">Läs Mer...</a>
           </div>
         </div>
-        <div class="col d-flex flex-row align-items-center m-5">
+        <div
+          class="col d-flex flex-row align-items-center m-5"
+          style="overflow-x: hidden"
+        >
           <img
-            src="https://cdn.icon-icons.com/icons2/3637/PNG/512/gemstone_banking_investment_business_finance_icon_227630.png"
+            src="images/crm.jpg"
             class="rounded mx-auto d-block"
             alt="..."
-            style="height: 128px"
+            style="height: 256px"
           />
           <div class="p-5 ml-5">
             <h2>CRM</h2>
@@ -713,16 +821,21 @@
               Hjälpmedel för Utskick, Bearbetning, Historik m.m. finns i
               systemet för en effektiv hantering.
             </p>
-            <a href="">Läs Mer...</a>
+            <a href="/index.asp?Info=FtgEx_CRM">Läs Mer...</a>
           </div>
-        </div>
-      </div>
-      <div
+        </div> -->
+      </section>
+      <section
         class="p-5 column justify-content-center align-items-center"
         style="min-height: 100vh"
       >
         <h2 class="col-6 m-auto p-5">Kontakta Oss</h2>
-        <form class="col-6 m-auto p-5">
+        <form
+          action="11KontaktaMig_save.asp"
+          method="POST"
+          class="col-6 m-auto p-5"
+          name="FrontPage_Form1"
+        >
           <div class="form-group">
             <label for="systemFormInput">System</label>
             <input
@@ -779,7 +892,7 @@
           <button class="btn btn-success">Skicka</button>
           <button type="reset" class="btn btn-secondary">Rensa</button>
         </form>
-      </div>
+      </section>
     </div>
     <footer class="text-center text-lg-start text-muted">
       <section
