@@ -45,11 +45,11 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
     />
     <meta
       name="description"
-      content="Tidrapportering, Process, Ärendehantering, Datasystem, Felhantering, L�n, L�nesystem, Outsourcing, Redovisning, Bokf�ring, Order, Lager, Fakturering, OLF, Kundreskontra, Leverant�rsreskontra, Ekonomisystem, Redovisningssystem, Bokf�ring, Inbetalning, Utbetalning, Finanssystem, Factoring, �rendehantering, Tidrapportering, Reser�kningssystem, HemPC Administration, CRM, Medlemsregister, Bokningssystem, Koncernrapportering, Taxi, Taxisystem, System f�r Taxi, TaxiAdministration, BC, Best�llningscentral, Leverant�rsfaktura, Scanna, Scanning, Skanning, ERP, ERP-system"
+      content="Tidrapportering, Process, Ärendehantering, Datasystem, Felhantering, Lön, Lönesystem, Outsourcing, Redovisning, Bokföring, Order, Lager, Fakturering, OLF, Kundreskontra, Leverantörsreskontra, Ekonomisystem, Redovisningssystem, Bokf�ring, Inbetalning, Utbetalning, Finanssystem, Factoring, �rendehantering, Tidrapportering, Reser�kningssystem, HemPC Administration, CRM, Medlemsregister, Bokningssystem, Koncernrapportering, Taxi, Taxisystem, System f�r Taxi, TaxiAdministration, BC, Best�llningscentral, Leverant�rsfaktura, Scanna, Scanning, Skanning, ERP, ERP-system"
     />
     <meta
       name="keywords"
-      content="Tidrapportering, Process, Ärendehantering, Datasystem, Felhantering, L�n, L�nesystem, Outsourcing, Redovisning, Bokf�ring, Order, Lager, Fakturering, OLF, Kundreskontra, Leverant�rsreskontra, Ekonomisystem, Redovisningssystem, Bokf�ring, Inbetalning, Utbetalning, Finanssystem, Factoring, �rendehantering, Tidrapportering, Reser�kningssystem, HemPC Administration, CRM, Medlemsregister, Bokningssystem, Koncernrapportering, Taxi, Taxisystem, System f�r Taxi, TaxiAdministration, BC, Best�llningscentral, Leverant�rsfaktura, Scanna, Scanning, Skanning, ERP, ERP-system"
+      content="Tidrapportering, Process, Ärendehantering, Datasystem, Felhantering, Lön, Lönesystem, Outsourcing, Redovisning, Bokföring, Order, Lager, Fakturering, OLF, Kundreskontra, Leverant�rsreskontra, Ekonomisystem, Redovisningssystem, Bokf�ring, Inbetalning, Utbetalning, Finanssystem, Factoring, �rendehantering, Tidrapportering, Reser�kningssystem, HemPC Administration, CRM, Medlemsregister, Bokningssystem, Koncernrapportering, Taxi, Taxisystem, System f�r Taxi, TaxiAdministration, BC, Best�llningscentral, Leverant�rsfaktura, Scanna, Scanning, Skanning, ERP, ERP-system"
     />
     <title>3pm it AB - Framtiden är här</title>
     <link rel="stylesheet" href="style.css" />
@@ -424,7 +424,7 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
             </ul>
           </li>
         </ul>
-        <div class="mr-5 d-flex mt-2 d-m-none d-xl-flex d-sm-none">
+        <div class="mr-5 d-flex mt-2 d-xl-flex d-sm-none d-m-none">
           <p class="text-muted mx-2 font-italic" style="font-size: 0.9rem">
             <%=oEchoForetag.Namn%>
           </p>
@@ -449,13 +449,12 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
       </div>
     </nav>
     <div
-      class="container-fluid main-content p-0 align-items-center justify-content-center"
+      class="d-flex flex-column container-fluid main-content p-0 m-0 align-items-center justify-content-center overflow-hidden"
     >
       <section
-        class="container-fluid row justify-content-around p-5 m-0"
+        class="content container-fluid row justify-content-around p-5 m-0"
         style="
           background-image: url('https://images.unsplash.com/photo-1567413010197-7b436a170e8d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2128&amp;q=80');
-          min-height: 90vh;
           opacity: 70%;
           overflow-x: hidden;
         "
@@ -486,7 +485,7 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
         style="min-height: 100vh"
       >
         <div
-          class="col d-flex flex-row align-items-center justify-content-center m-5 p-5 container-fluid"
+          class="col d-flex flex-row align-items-center justify-content-center p-5 container-fluid"
         >
           <img
             src="images/detmindreföretaget.jpg"
@@ -521,7 +520,7 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
           </div>
         </div>
         <div
-          class="col d-flex flex-row align-items-center justify-content-center m-5 p-5 container-fluid"
+          class="col d-flex flex-row align-items-center justify-content-center p-5 container-fluid"
         >
           <img
             src="images/detstörreföretaget.jpg"
@@ -593,12 +592,8 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
         </div>
       </section>
       <section
-        class="container p-5 column justify-content-center align-items-center"
-        style="
-          min-width: 100vw;
-          min-height: 70vh;
-          background-color: RGBA(121, 188, 109, 0.2);
-        "
+        class="d-flex content column justify-content-center align-items-center"
+        style="min-width: 100vw; background-color: RGBA(121, 188, 109, 0.2)"
       >
         <div class="container-fluid">
           <div class="row justify-content-center" style="min-width: 100%">
@@ -672,160 +667,227 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
             </div>
           </div>
         </div>
-
-        <!-- <div
-          class="col d-flex flex-row align-items-center m-5"
-          style="overflow-x: hidden"
-        >
-          <img
-            src="images/finansföretaget.jpg"
-            class="rounded mx-auto d-block"
-            alt="..."
-            style="height: 256px"
-          />
-          <div class="p-5">
-            <h2>Finansföretaget</h2>
-            <p class="text-break">
-              Finansbranchen är hårt konkurrensutsatt. Detta kräver effektiva
-              system - ofta med specifik funktionalitet. Våra system lever upp
-              till kraven. Alla finanssystem bygger på förutsättningen att det
-              kan finnas tre parter som samarbetar. Dessa tre parter är:
-              Finansbolaget Betalaren av lånet Diskontör - den som säljer
-              (belånar) fakturan eller avtalet Information mellan dessa parter
-              överförs via systemet. Alla parter har alltid samma information
-              och alltid informerade om senaste status. Naturligtvis fungerar
-              systemen även utan att det finns en "Diskontör" med. Finansystemen
-              är moduluppbyggda på ett sådant sätt som gör det lätt att
-              installera och produktionssätta. Ordval och definitioner kan
-              skilja - därför en beskrivning av vad våra systemnamn står för.
-            </p>
-            <p>Följande system ingår i finansgruppen:</p>
-            <ul>
-              <li>
-                Reskontrafinansiering: Belåning av hela eller delar av en
-                reskontra. Ränta beräknas som ett dagssaldo.
-                <a href="/index.asp?Info=Fi_Fin&SysGrp=Finans">Läs Mer...</a>
-              </li>
-              <li>
-                Factoring: Belåning per varje faktura. Ränta beräknas per
-                faktura.
-                <a href="/index.asp?Info=Fi_Fact&SysGrp=Finans">Läs Mer...</a>
-              </li>
-              <li>
-                Kontrakt: Hanterar lån med delbetalningar. Låneformer kan vara
-                Avbetalning, Hyra, Leasing m.m. Ränta beräknas på restskuld
-                eller med annuitet
-                <a href="/index.asp?Info=Fi_Kont&SysGrp=Finans">Läs Mer...</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div
-          class="col d-flex flex-row align-items-center m-5"
-          style="overflow-x: hidden"
-        >
-          <img
-            src="images/taxiåkeriet.jpg"
-            class="rounded mx-auto d-block"
-            alt="..."
-            style="height: 256px"
-          />
-          <div class="p-5 ml-5">
-            <h2>Taxiåkeriet</h2>
-            <p class="text-break">
-              Taxisystemet är helt anpassat till ett modernt taxiåkeris behov av
-              kostnadsuppföljning, körpassplanering, lönebetalning och
-              avräkningar. Systemet passar både för en- och flerbilsåkeri.
-              Särskillt uppskattat är den automatiska bokföringen som med
-              utgångspunkt från en körrapport bokför inregistrerad data.
-              Eftersom systemet är internetbaserat kan åkaren ge den anställde
-              möjlighet att själv registrera körpass eller se vilka pass han är
-              inplanerad på. Man kan också visa vilka pass som är lediga för
-              bokning. Under väntetiden i taxin kan man via sin handdator följa
-              upp och kontrollera både sin redovisning och körpassens olika
-              status.
-            </p>
-            <p>Följande system ingår i Taxisystemen.</p>
-            <ul>
-              <li>
-                Taxi - Grundsystemet
-                <a href="/index.asp?Info=Tx_Taxi&SysGrp=Taxi">Läs Mer...</a>
-              </li>
-              <li>
-                Taxi Anställda
-                <a href="/index.asp?Info=Tx_Anst&SysGrp=Taxi">Läs Mer...</a>
-              </li>
-              <li>
-                Taxi BC
-                <a href="/index.asp?Info=Tx_BC&SysGrp=Taxi">Läs Mer...</a>
-              </li>
-              <li>
-                Taxi Lediga Pass
-                <a href="/index.asp?Info=Tx_LP&SysGrp=Taxi">Läs Mer...</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div
-          class="col d-flex flex-row align-items-center m-5"
-          style="overflow-x: hidden"
-        >
-          <img
-            src="images/ärendehantering.jpg"
-            class="rounded mx-auto d-block"
-            alt="..."
-            style="height: 256px"
-          />
-          <div class="p-5 ml-5">
-            <h2>Ärendehantering</h2>
-            <p class="text-break">
-              Ibland passar inte en struktur som skapats i ett datasystem.
-              Organisation eller arbetsmässiga sekvenser passar inte alltid
-              standardsystems struktur. 3pm's ärendehanteringssystem är
-              lösningen på detta. Varje funktion som finns i våra system kan
-              länkas in som processteg i en större händelsekedja. Till detta
-              finns frihet att definiera egen information och data som skall
-              användas i processen. Beräkningar med såväl datum, tid och belopp
-              kan göras. Genom att definiera ett processflöde uppnår man
-              säkerhet, kontroll, dokumentation och kvalitet i handläggningen.
-            </p>
-            <p>Några exempel där systemet passar utmärkt:</p>
-            <ul>
-              <li>vid test av datasystem</li>
-              <li>vid systemunderhåll</li>
-              <li>vid felrapportering</li>
-              <li>vid ärendehantering i mydighetsutövande</li>
-            </ul>
-            <a href="/index.asp?Info=FtgEx_Arende">Läs Mer...</a>
-          </div>
-        </div>
-        <div
-          class="col d-flex flex-row align-items-center m-5"
-          style="overflow-x: hidden"
-        >
-          <img
-            src="images/crm.jpg"
-            class="rounded mx-auto d-block"
-            alt="..."
-            style="height: 256px"
-          />
-          <div class="p-5 ml-5">
-            <h2>CRM</h2>
-            <p class="text-break">
-              Ett system som riktar sig till dom som behöver skicka brev eller
-              mail till ex.v. kunder, leverantörer, personal mm. Adressregister
-              från externa källor men också egna register kan behandlas.
-              Hjälpmedel för Utskick, Bearbetning, Historik m.m. finns i
-              systemet för en effektiv hantering.
-            </p>
-            <a href="/index.asp?Info=FtgEx_CRM">Läs Mer...</a>
-          </div>
-        </div> -->
       </section>
       <section
-        class="p-5 column justify-content-center align-items-center"
-        style="min-height: 100vh"
+        class="d-flex column justify-content-center align-items-center overflow-x-hidden"
+      >
+        <div class="d-flex align-items-center justify-content-center">
+          <div class="container rounded">
+            <div class="h2 text-center pt-2 mb-5">Kunder och Partners</div>
+
+            <div class="rollers position-relative overflow-hidden">
+              <div class="wrapper">
+                <div class="items-container roll-LL">
+                  <div class="item">
+                    <img
+                      src="images/Logga.png"
+                      alt=""
+                      class="company"
+                      style="width: 50%; height: 50%"
+                    />
+                  </div>
+                  <div class="item">
+                    <img
+                      src="images/Logga.png"
+                      alt=""
+                      class="company"
+                      style="width: 50%; height: 50%"
+                    />
+                  </div>
+                  <div class="item">
+                    <img
+                      src="images/Logga.png"
+                      alt=""
+                      class="company"
+                      style="width: 50%; height: 50%"
+                    />
+                  </div>
+                  <div class="item">
+                    <img
+                      src="images/Logga.png"
+                      alt=""
+                      class="company"
+                      style="width: 50%; height: 50%"
+                    />
+                  </div>
+                  <div class="item">
+                    <img
+                      src="images/Logga.png"
+                      alt=""
+                      class="company"
+                      style="width: 50%; height: 50%"
+                    />
+                  </div>
+                  <div class="item">
+                    <img
+                      src="images/Logga.png"
+                      alt=""
+                      class="company"
+                      style="width: 50%; height: 50%"
+                    />
+                  </div>
+                </div>
+                <div class="items-container roll-RL">
+                  <div class="item">
+                    <img
+                      src="images/Logga.png"
+                      alt=""
+                      class="company"
+                      style="width: 50%; height: 50%"
+                    />
+                  </div>
+                  <div class="item">
+                    <img
+                      src="images/Logga.png"
+                      alt=""
+                      class="company"
+                      style="width: 50%; height: 50%"
+                    />
+                  </div>
+                  <div class="item">
+                    <img
+                      src="images/Logga.png"
+                      alt=""
+                      class="company"
+                      style="width: 50%; height: 50%"
+                    />
+                  </div>
+                  <div class="item">
+                    <img
+                      src="images/Logga.png"
+                      alt=""
+                      class="company"
+                      style="width: 50%; height: 50%"
+                    />
+                  </div>
+                  <div class="item">
+                    <img
+                      src="images/Logga.png"
+                      alt=""
+                      class="company"
+                      style="width: 50%; height: 50%"
+                    />
+                  </div>
+                  <div class="item">
+                    <img
+                      src="images/Logga.png"
+                      alt=""
+                      class="company"
+                      style="width: 50%; height: 50%"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper">
+                <div class="items-container reverse-roll-LL">
+                  <div class="item">
+                    <img
+                      src="images/Logga.png"
+                      alt=""
+                      class="company"
+                      style="width: 50%; height: 50%"
+                    />
+                  </div>
+                  <div class="item">
+                    <img
+                      src="images/Logga.png"
+                      alt=""
+                      class="company"
+                      style="width: 50%; height: 50%"
+                    />
+                  </div>
+                  <div class="item">
+                    <img
+                      src="images/Logga.png"
+                      alt=""
+                      class="company"
+                      style="width: 50%; height: 50%"
+                    />
+                  </div>
+                  <div class="item">
+                    <img
+                      src="images/Logga.png"
+                      alt=""
+                      class="company"
+                      style="width: 50%; height: 50%"
+                    />
+                  </div>
+                  <div class="item">
+                    <img
+                      src="images/Logga.png"
+                      alt=""
+                      class="company"
+                      style="width: 50%; height: 50%"
+                    />
+                  </div>
+                  <div class="item">
+                    <img
+                      src="images/Logga.png"
+                      alt=""
+                      class="company"
+                      style="width: 50%; height: 50%"
+                    />
+                  </div>
+                </div>
+                <div class="items-container reverse-roll-RL">
+                  <div class="item">
+                    <img
+                      src="images/Logga.png"
+                      alt=""
+                      class="company"
+                      style="width: 50%; height: 50%"
+                    />
+                  </div>
+                  <div class="item">
+                    <img
+                      src="images/Logga.png"
+                      alt=""
+                      class="company"
+                      style="width: 50%; height: 50%"
+                    />
+                  </div>
+                  <div class="item">
+                    <img
+                      src="images/Logga.png"
+                      alt=""
+                      class="company"
+                      style="width: 50%; height: 50%"
+                    />
+                  </div>
+                  <div class="item">
+                    <img
+                      src="images/Logga.png"
+                      alt=""
+                      class="company"
+                      style="width: 50%; height: 50%"
+                    />
+                  </div>
+                  <div class="item">
+                    <img
+                      src="images/Logga.png"
+                      alt=""
+                      class="company"
+                      style="width: 50%; height: 50%"
+                    />
+                  </div>
+                  <div class="item">
+                    <img
+                      src="images/Logga.png"
+                      alt=""
+                      class="company"
+                      style="width: 50%; height: 50%"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="end-roller"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="p-5 column justify-content-center align-items-center content"
       >
         <h2 class="col-6 m-auto p-5">Kontakta Oss</h2>
         <form
