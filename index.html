@@ -455,11 +455,12 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
         class="container-fluid row justify-content-around p-5 m-0"
         style="
           background-image: url('https://images.unsplash.com/photo-1567413010197-7b436a170e8d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2128&amp;q=80');
-          min-height: 95vh;
+          min-height: 90vh;
           opacity: 70%;
+          overflow-x: hidden;
         "
       >
-        <div class="col-5 bg-light p-5 m-5 h-50">
+        <div class="col-5 bg-light p-5 h-50 mr-auto ml-5">
           <h1 class="display-4 mb-4">Framtiden är här</h1>
           <p style="font-size: 1.1rem">
             Vi är ett företag som använder internet som bas för vår verksamhet.
@@ -479,25 +480,23 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
           </p>
           <button class="btn btn-success btn-lg">Börja här</button>
         </div>
-        <div class="col-5"></div>
       </section>
       <section
         class="p-5 column justify-content-center align-items-center"
         style="min-height: 100vh"
       >
         <div
-          class="col d-flex flex-row align-items-center m-5"
-          style="overflow-x: hidden"
+          class="col d-flex flex-row align-items-center justify-content-center m-5 p-5 container-fluid"
         >
           <img
             src="images/detmindreföretaget.jpg"
-            class="rounded mx-auto d-block"
+            class="rounded d-block"
             alt="..."
             style="height: 256px"
           />
-          <div class="p-5 ml-5 col-10">
+          <div class="container-fluid ml-5">
             <h2>Det Mindre Företaget</h2>
-            <p class="text-break col-10">
+            <p class="text-break">
               Den mindre företagaren kan genom att kombinera våra
               <a href="/index.asp?Info=Exakt&SysGrp=Exakt">system</a> med vårt
               <a href="/index.asp?Info=FtgAdmin">tjänsteutbud</a>
@@ -522,8 +521,7 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
           </div>
         </div>
         <div
-          class="col d-flex flex-row align-items-center m-5"
-          style="overflow-x: hidden"
+          class="col d-flex flex-row align-items-center justify-content-center m-5 p-5 container-fluid"
         >
           <img
             src="images/detstörreföretaget.jpg"
@@ -531,9 +529,9 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
             alt="..."
             style="height: 256px"
           />
-          <div class="p-5 ml-5 col-10">
+          <div class="container-fluid ml-5">
             <h2>Det Större Företaget</h2>
-            <p class="text-break col-10">
+            <p class="text-break">
               När det större eller medelstora företaget väljer ERP-system så
               måste man ibland kompromissa mellan maximal funktionalitet för
               varje enskild systemdel eller den bäst fungerande helheten. 3pm
