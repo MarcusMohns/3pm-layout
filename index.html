@@ -459,7 +459,10 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
           overflow-x: hidden;
         "
       >
-        <div class="col-5 bg-light p-5 h-50 mr-auto ml-5">
+        <div
+          class="col-5 bg-light p-5 h-50 mr-auto ml-5 container-fluid"
+          style="min-width: 300px"
+        >
           <h1 class="display-4 mb-4">Framtiden är här</h1>
           <p style="font-size: 1.1rem">
             Vi är ett företag som använder internet som bas för vår verksamhet.
@@ -593,7 +596,15 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
       </section>
       <section
         class="d-flex content column justify-content-center align-items-center"
-        style="min-width: 100vw; background-color: RGBA(121, 188, 109, 0.2)"
+        style="
+          min-width: 100vw;
+          background: rgb(255, 255, 255);
+          background: linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.8239670868347339) 16%,
+            rgba(231, 241, 232, 1) 50%
+          );
+        "
       >
         <div class="container-fluid">
           <div class="row justify-content-center" style="min-width: 100%">
@@ -669,7 +680,7 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
         </div>
       </section>
       <section
-        class="d-flex column justify-content-center align-items-center overflow-x-hidden"
+        class="kunder-och-partners d-flex column justify-content-center align-items-center overflow-x-hidden"
       >
         <div class="d-flex align-items-center justify-content-center">
           <div class="container rounded">
