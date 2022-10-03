@@ -48,7 +48,6 @@
 .container .start-roller {
   left: 0;
   top: 0;
-  background-image: linear-gradient(to right, white 30%, #ffffff00);
 }
 
 .container .start-roller,
@@ -62,7 +61,6 @@
 .container .end-roller {
   right: 0;
   top: 0;
-  background-image: linear-gradient(to left, white 30%, rgba(255, 255, 255, 0));
 }
 
 .container .rollers .wrapper {
