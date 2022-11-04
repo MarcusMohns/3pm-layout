@@ -4,9 +4,9 @@ const showToast = () => {
   toast.show();
 };
 
-const startBtn = () => {
-  window.scrollBy({
-    top: 1050,
+const startBtn = (value) => {
+  window.scrollTo({
+    top: value,
     behavior: 'smooth'
   });
 }
