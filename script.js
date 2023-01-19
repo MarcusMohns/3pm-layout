@@ -3,3 +3,10 @@ const showToast = () => {
   const toast = new bootstrap.Toast(toastLiveExample);
   toast.show();
 };
+
+const startBtn = (value) => {
+  window.scrollTo({
+    top: value,
+    behavior: 'smooth'
+  });
+}

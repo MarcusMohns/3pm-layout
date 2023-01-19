@@ -1,3 +1,9 @@
+.intro-section {
+  background-image: url('/images/jonathan-livingston-seagull.jpg');
+  background-size:     cover;                      
+  background-position: center center; 
+}
+
 .dropdown-menu li {
   position: relative;
 }

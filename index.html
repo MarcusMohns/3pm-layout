@@ -28,6 +28,7 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
   </body>
 </html>
 <% end if %>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -45,11 +46,11 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
     />
     <meta
       name="description"
-      content="Tidrapportering, Process, Ärendehantering, Datasystem, Felhantering, Lön, Lönesystem, Outsourcing, Redovisning, Bokföring, Order, Lager, Fakturering, OLF, Kundreskontra, Leverantörsreskontra, Ekonomisystem, Redovisningssystem, Bokf�ring, Inbetalning, Utbetalning, Finanssystem, Factoring, �rendehantering, Tidrapportering, Reser�kningssystem, HemPC Administration, CRM, Medlemsregister, Bokningssystem, Koncernrapportering, Taxi, Taxisystem, System f�r Taxi, TaxiAdministration, BC, Best�llningscentral, Leverant�rsfaktura, Scanna, Scanning, Skanning, ERP, ERP-system"
+      content="Tidrapportering, Process, Ärendehantering, Datasystem, Felhantering, Lön, Lönesystem, Outsourcing, Redovisning, Bokföring, Order, Lager, Fakturering, OLF, Kundreskontra, Leverantörsreskontra, Ekonomisystem, Redovisningssystem, Bokföring, Inbetalning, Utbetalning, Finanssystem, Factoring, Ärendehantering, Tidrapportering, Reseräkningssystem, HemPC Administration, CRM, Medlemsregister, Bokningssystem, Koncernrapportering, Taxi, Taxisystem, System för Taxi, TaxiAdministration, BC, Beställningscentral, Leverantörsfaktura, Scanna, Scanning, Skanning, ERP, ERP-system"
     />
     <meta
       name="keywords"
-      content="Tidrapportering, Process, Ärendehantering, Datasystem, Felhantering, Lön, Lönesystem, Outsourcing, Redovisning, Bokföring, Order, Lager, Fakturering, OLF, Kundreskontra, Leverant�rsreskontra, Ekonomisystem, Redovisningssystem, Bokf�ring, Inbetalning, Utbetalning, Finanssystem, Factoring, �rendehantering, Tidrapportering, Reser�kningssystem, HemPC Administration, CRM, Medlemsregister, Bokningssystem, Koncernrapportering, Taxi, Taxisystem, System f�r Taxi, TaxiAdministration, BC, Best�llningscentral, Leverant�rsfaktura, Scanna, Scanning, Skanning, ERP, ERP-system"
+      content="Tidrapportering, Process, Ärendehantering, Datasystem, Felhantering, Lön, Lönesystem, Outsourcing, Redovisning, Bokföring, Order, Lager, Fakturering, OLF, Kundreskontra, Leverantörsreskontra, Ekonomisystem, Redovisningssystem, Bokföring, Inbetalning, Utbetalning, Finanssystem, Factoring, Ärendehantering, Tidrapportering, Reseräkningssystem, HemPC Administration, CRM, Medlemsregister, Bokningssystem, Koncernrapportering, Taxi, Taxisystem, System för Taxi, TaxiAdministration, BC, Beställningscentral, Leverantörsfaktura, Scanna, Scanning, Skanning, ERP, ERP-system"
     />
     <title>3pm it AB - Framtiden är här</title>
     <link rel="stylesheet" href="style.css" />
@@ -450,9 +451,8 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
       class="d-flex flex-column container-fluid main-content p-0 m-0 align-items-center justify-content-center overflow-hidden"
     >
       <section
-        class="content container-fluid row justify-content-around p-5 m-0"
+        class="content container-fluid row justify-content-around p-5 m-0 intro-section"
         style="
-          background-image: url('https://images.unsplash.com/photo-1567413010197-7b436a170e8d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2128&amp;q=80');
           opacity: 70%;
           overflow-x: hidden;
         "
@@ -480,7 +480,7 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
             system som riktar sig till olika typer av företag men också system
             som riktar sig till specifika områden.
           </p>
-          <button class="btn btn-success btn-lg">Börja här</button>
+          <button class="btn btn-success btn-lg" onclick="startBtn(1175)">Börja här</button>
         </div>
       </section>
       <!-- <section
@@ -595,7 +595,7 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
         </div>
       </section> -->
       <section
-        class="d-flex content column justify-content-center align-items-center"
+        class="d-flex content column justify-content-center align-items-center card-section"
         style="
           min-width: 100vw;
           background: rgb(255, 255, 255);
@@ -1026,6 +1026,7 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
           <button type="reset" class="btn btn-secondary">Rensa</button>
         </form>
       </section>
+      <button class="btn btn-success btn-lg" onclick="startBtn(0)">Upp till toppen</button>
     </div>
     <footer class="text-center text-lg-start text-muted">
       <section
