@@ -1,9 +1,12 @@
 .intro-section {
-  background-image: url('/images/jonathan-livingston-seagull.jpg');
-  background-size:     cover;                      
-  background-position: center center; 
+  background-image: url("/images/jonathan-livingston-seagull.jpg");
+  background-size: cover;
+  background-position: center center;
 }
-
+.company {
+  width: 50%;
+  height: 50%;
+}
 .dropdown-menu li {
   position: relative;
 }
@@ -181,9 +184,8 @@
   .welcome-div {
     flex: 0 0 41.666667%;
     max-width: 41.666667%;
-    margin-left: 3rem!important;
+    margin-left: 3rem !important;
     padding: 3rem !important;
     margin-right: auto !important;
- 
   }
 }
