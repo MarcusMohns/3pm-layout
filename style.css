@@ -3,6 +3,33 @@
   background-size: cover;
   background-position: center center;
 }
+
+@media screen and (min-width: 960px) {
+  .title-card {
+    animation: 1s linear 0s fade-in;
+  }
+  .hidden {
+    transform: translateY(-13%);
+    transition: transform 0.5s;
+  }
+  .show {
+    filter: blur(0);
+    transform: translateX(0);
+  }
+  .company-card:nth-child(2) {
+    transition-delay: 100ms;
+  }
+  .company-card:nth-child(3) {
+    transition-delay: 200ms;
+  }
+
+  @media (prefers-reduced-motion) {
+    .hidden {
+      transition: none;
+    }
+  }
+}
+
 .company {
   width: 50%;
   height: 50%;
@@ -137,6 +164,17 @@
   }
   100% {
     left: 100%;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    filter: blur(1px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
   }
 }
 

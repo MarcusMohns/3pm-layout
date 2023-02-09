@@ -55,10 +55,9 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
     <title>3pm it AB - Framtiden är här</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <script defer src="script.js"></script>
   </head>
   <body class="max-vw-100 overflow-x-hidden">
-    <script src="script.js"></script>
-
     <nav class="navbar navbar-expand navbar-light bg-light">
       <a class="navbar-brand" href="../index.asp?SysGrp=Blank"
         ><img src="images/Logga.png" class="rounded me-2 img-fluid" alt="logo"
@@ -455,7 +454,7 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
         style="opacity: 70%; overflow-x: hidden"
       >
         <div
-          class="bg-light container-fluid welcome-div h-50 p-5"
+          class="bg-light container-fluid welcome-div h-50 p-5 title-card"
           style="min-width: 300px"
         >
           <h1 class="display-4 mb-4 overflow-clip text-center text-lg-left">
@@ -496,8 +495,14 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
         "
       >
         <div class="container-fluid">
-          <div class="row justify-content-center" style="min-width: 100%">
-            <div class="card col-3.5 m-5 system-cards" style="width: 18rem">
+          <div
+            class="row justify-content-center company-cards"
+            style="min-width: 100%"
+          >
+            <div
+              class="card col-3.5 m-5 system-cards hidden company-card"
+              style="width: 18rem"
+            >
               <img
                 class="card-img-top"
                 src="images/detmindreföretaget.jpg"
@@ -515,7 +520,10 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
                 </p>
               </div>
             </div>
-            <div class="card col-3.5 m-5 system-cards" style="width: 18rem">
+            <div
+              class="card col-3.5 m-5 system-cards hidden company-card"
+              style="width: 18rem"
+            >
               <img
                 class="card-img-top"
                 src="images/detstörreföretaget.jpg"
@@ -537,7 +545,10 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
                 </p>
               </div>
             </div>
-            <div class="card col-3.5 m-5 system-cards" style="width: 18rem">
+            <div
+              class="card col-3.5 m-5 system-cards hidden company-card"
+              style="width: 18rem"
+            >
               <img
                 class="card-img-top"
                 src="images/finansföretaget.jpg"
@@ -556,8 +567,16 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
                 </p>
               </div>
             </div>
+          </div>
 
-            <div class="card col-3.5 m-5 system-cards" style="width: 18rem">
+          <div
+            class="row justify-content-center company-cards"
+            style="min-width: 100%"
+          >
+            <div
+              class="card col-3.5 m-5 system-cards hidden company-card"
+              style="width: 18rem"
+            >
               <img
                 class="card-img-top"
                 src="images/taxiåkeriet.jpg"
@@ -577,7 +596,10 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
                 </p>
               </div>
             </div>
-            <div class="card col-3.5 m-5 system-cards" style="width: 18rem">
+            <div
+              class="card col-3.5 m-5 system-cards hidden company-card"
+              style="width: 18rem"
+            >
               <img
                 class="card-img-top"
                 src="images/ärendehantering.jpg"
@@ -597,7 +619,10 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
                 </p>
               </div>
             </div>
-            <div class="card col-3.5 m-5 system-cards" style="width: 18rem">
+            <div
+              class="card col-3.5 m-5 system-cards hidden company-card"
+              style="width: 18rem"
+            >
               <img
                 class="card-img-top"
                 src="images/crm.jpg"
