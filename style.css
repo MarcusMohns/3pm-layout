@@ -54,7 +54,9 @@
 .system-cards {
   transition: transform 0.5s, box-shadow 0.5s;
 }
-
+.card-text {
+  height: 100%;
+}
 .card-img-top {
   width: 286px;
   height: 206px;
