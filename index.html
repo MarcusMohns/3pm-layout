@@ -513,7 +513,7 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
                 alt="Card image cap"
               />
               <div class="card-body d-flex flex-column">
-                <h4 class="card-title">Det Mindre Företaget</h4>
+                <div class="card-title">Det Mindre Företaget</div>
                 <p
                   class="card-text d-flex flex-column flex-wrap justify-content-lg-between align-items-start"
                 >
@@ -536,7 +536,7 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
                 alt="Card image cap"
               />
               <div class="card-body d-flex flex-column">
-                <h4 class="card-title">Det Större Företaget</h4>
+                <div class="card-title">Det Större Företaget</div>
                 <p
                   class="card-text d-flex flex-column flex-wrap justify-content-lg-between align-items-start"
                 >
@@ -563,7 +563,7 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
                 alt="Card image cap"
               />
               <div class="card-body d-flex flex-column">
-                <h4 class="card-title">Finansföretaget</h4>
+                <div class="card-title">Finansföretaget</div>
                 <p
                   class="card-text d-flex flex-column flex-wrap justify-content-lg-between align-items-start"
                 >
@@ -593,7 +593,7 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
                 alt="Card image cap"
               />
               <div class="card-body d-flex flex-column">
-                <h4 class="card-title">Taxiåkeriet</h4>
+                <div class="card-title">Taxiåkeriet</div>
                 <p
                   class="card-text d-flex flex-column flex-wrap justify-content-lg-between align-items-start"
                 >
@@ -618,7 +618,7 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
                 alt="Card image cap"
               />
               <div class="card-body d-flex flex-column">
-                <h4 class="card-title">Ärendehantering</h4>
+                <div class="card-title">Ärendehantering</div>
                 <p
                   class="card-text d-flex flex-column flex-wrap justify-content-lg-between align-items-start"
                 >
@@ -643,7 +643,7 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
                 alt="Card image cap"
               />
               <div class="card-body d-flex flex-column">
-                <h4 class="card-title">CRM</h4>
+                <div class="card-title">CRM</div>
                 <p
                   class="card-text d-flex flex-column flex-wrap justify-content-lg-between align-items-start"
                 >
@@ -675,14 +675,24 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
           class="d-flex align-items-center justify-content-center mt-5 w-100"
         >
           <div class="container rounded w-100">
-            <div class="h4 text-center pt-2 mb-5 mt-5">Kunder och Partners</div>
+            <h3 class="div text-center pt-2 mb-5 mt-5">Kunder och Partners</h3>
 
             <div class="kunder-och-partners">
               <div class="item m-5">
-                <img src="images/FactroingGrp.jpg" alt="" />
+                <img
+                  id="factoring-gruppen"
+                  class="partner"
+                  src="images/FactroingGrp.jpg"
+                  alt="Factoring Gruppen"
+                />
               </div>
               <div class="item m-5">
-                <img src="images/pwc.png" alt="" />
+                <img
+                  id="pwc"
+                  class="partner"
+                  src="images/pwc.png"
+                  alt="Price Water House"
+                />
               </div>
             </div>
           </div>
@@ -693,7 +703,7 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
         class="p-5 column justify-content-center align-items-center content"
         style="background: rgb(255, 255, 255)"
       >
-        <h4 class="col-6 m-auto text-center">Kontakta Oss</h4>
+        <h3 class="col-6 m-auto text-center">Kontakta Oss</h3>
         <form
           action="11KontaktaMig_save.asp"
           method="POST"
