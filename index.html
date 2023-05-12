@@ -28,7 +28,6 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
   </body>
 </html>
 <% end if %>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -59,7 +58,9 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
     <script defer src="script.js"></script>
   </head>
   <body class="max-vw-100 overflow-x-hidden">
-    <nav class="navbar navbar-expand navbar-light bg-light">
+    <nav
+      class="navbar navbar-expand navbar-light bg-light navbar-toggler flex-wrap"
+    >
       <a class="navbar-brand" href="../index.asp?SysGrp=Blank"
         ><img src="images/Logga.png" class="rounded me-2 logo" alt="logo"
       /></a>
