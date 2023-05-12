@@ -9,6 +9,11 @@
   height: 48px;
 }
 
+.footer-header {
+  font-size: 20px;
+  font-weight: bold;
+}
+
 @media screen and (min-width: 960px) {
   .title-card {
     animation: 1s linear 0s fade-in;
