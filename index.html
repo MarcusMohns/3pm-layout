@@ -1,33 +1,3 @@
-<% set oEchoForetag = Server.CreateObject("EchoAdmin.Foretag") bResult =
-oEchoForetag.bGet("3pm") session("sKatalog") = "" if
-Request.querystring("SysGrp") <> "" then session("sSysGrp") =
-Request.querystring("SysGrp") If session("sSysGrp") = "Exakt" then
-session("sInfo") = "Exakt" ElseIf session("sSysGrp") = "Elegant" then
-session("sInfo") = "Elegant" ElseIf session("sSysGrp") = "Finans" then
-session("sInfo") = "Finans" ElseIf session("sSysGrp") = "Excellent" then
-session("sInfo") = "Excellent" ElseIf session("sSysGrp") = "Taxi" then
-session("sInfo") = "Taxi" ElseIf session("sSysGrp") = "Express" then
-session("sInfo") = "Express" ElseIf session("sSysGrp") = "Expert" then
-session("sInfo") = "Expert" Else session("sInfo") = "" end if End if
-session("sKatalog") = "" session("sKontaktaMig") = "" if
-Request.querystring("SysGrp") = "Blank" then session("sSysGrp") = "" if
-Request.querystring("Info") <> "" then session("sInfo") =
-Request.querystring("Info") if Request.querystring("SysGrp") = "Blank" then
-session("sInfo") = "" Select Case session("sInfo") Case
-"FtgSma","FtgStor","FtgFinas","FtgTaxi","FtgSam","FtgSys","FtgAdmin"
-session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
-= "Ater" then If session("sInfo") = "" then session("sSysGrp") = "" %>
-<html>
-  <head> </head>
-  <body>
-    <script language="JavaScript" type="text/javascript">
-      // <!--
-      history.go(-2);
-      // -->
-    </script>
-  </body>
-</html>
-<% end if %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -661,50 +631,9 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
       </section>
 
       <section
-        class="kunder-och-partners d-flex column justify-content-center align-items-center overflow-x-hidden pb-5"
-        style="
-          min-height: 700px;
-          width: 100%;
-          background-image: linear-gradient(
-            white,
-            rgb(217, 240, 255) 70%,
-            white
-          );
-        "
+        class="p-5 column justify-content-center align-items-center content bg-dark"
       >
-        <div
-          class="d-flex align-items-center justify-content-center mt-5 w-100"
-        >
-          <div class="container rounded w-100">
-            <h2 class="div text-center pt-2 mb-5 mt-5">Kunder och Partners</h2>
-
-            <div class="kunder-och-partners">
-              <div class="item m-5">
-                <img
-                  id="factoring-gruppen"
-                  class="partner"
-                  src="images/FactroingGrp.jpg"
-                  alt="Factoring Gruppen"
-                />
-              </div>
-              <div class="item m-5">
-                <img
-                  id="pwc"
-                  class="partner"
-                  src="images/pwc.png"
-                  alt="Price Water House"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        class="p-5 column justify-content-center align-items-center content"
-        style="background: rgb(255, 255, 255)"
-      >
-        <h2 class="col-6 m-auto text-center">Kontakta Oss</h2>
+        <h2 class="col-6 m-auto text-center text-light">Kontakta Oss</h2>
         <form
           action="11KontaktaMig_save.asp"
           method="POST"
@@ -712,7 +641,7 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
           name="FrontPage_Form1"
         >
           <div class="form-group">
-            <label for="systemFormInput">System</label>
+            <label class="text-light" for="systemFormInput">System</label>
             <input
               type="text"
               class="form-control"
@@ -721,7 +650,7 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
             />
           </div>
           <div class="form-group">
-            <label for="namnFormInput">Namn</label>
+            <label class="text-light" for="namnFormInput">Namn</label>
             <input
               type="text"
               class="form-control"
@@ -730,7 +659,7 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
             />
           </div>
           <div class="form-group">
-            <label for="telefonFormInput">Telefon</label>
+            <label class="text-light" for="telefonFormInput">Telefon</label>
             <input
               type="text"
               class="form-control"
@@ -739,7 +668,7 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
             />
           </div>
           <div class="form-group">
-            <label for="mobilFormInput">Mobil</label>
+            <label class="text-light" for="mobilFormInput">Mobil</label>
             <input
               type="text"
               class="form-control"
@@ -748,7 +677,7 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
             />
           </div>
           <div class="form-group">
-            <label for="emailFormInput">Email</label>
+            <label class="text-light" for="emailFormInput">Email</label>
             <input
               type="email"
               class="form-control"
@@ -757,7 +686,7 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
             />
           </div>
           <div class="form-group">
-            <label for="ovrigtFormInput">Övrigt</label>
+            <label class="text-light" for="ovrigtFormInput">Övrigt</label>
             <textarea
               class="form-control"
               id="ovrigtFormInput"
@@ -768,10 +697,38 @@ session("sSysGrp") = "" End Select sAter = Request.querystring("Ater") if sAter
           <button type="reset" class="btn btn-secondary">Rensa</button>
         </form>
       </section>
-      <button class="btn btn-success btn-lg" onclick="startBtn(0)">
-        Upp till toppen
-      </button>
     </div>
+    <!-- <section
+      class="kunder-och-partners d-flex column justify-content-center align-items-center overflow-x-hidden pb-5 bg-secondary vw-100"
+    >
+      <div class="d-flex align-items-center justify-content-center mt-5 w-100">
+        <div class="container rounded w-100">
+          <h2 class="div text-center pt-2 mb-5 mt-5 text-light">
+            Kunder och Partners
+          </h2>
+
+          <div class="kunder-och-partners">
+            <div class="item m-5">
+              <img
+                id="factoring-gruppen"
+                class="partner"
+                src="images/FactroingGrp.jpg"
+                alt="Factoring Gruppen"
+              />
+            </div>
+            <div class="item m-5">
+              <img
+                id="pwc"
+                class="partner"
+                src="images/pwc.png"
+                alt="Price Water House"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
     <footer class="text-center text-lg-start text-muted">
       <section class="">
         <div class="container text-center text-md-start mt-5">
