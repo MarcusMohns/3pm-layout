@@ -19,7 +19,7 @@
     animation: 1s linear 0s fade-in;
   }
   .hidden {
-    transform: translateY(-13%);
+    transform: translateY(-10%);
     transition: transform 0.5s;
   }
   .show {
