@@ -32,7 +32,15 @@
       class="navbar navbar-expand navbar-light bg-light navbar-toggler flex-wrap"
     >
       <a class="navbar-brand" href="../index.asp?SysGrp=Blank"
-        ><img src="images/Logga.png" class="rounded me-2 logo" alt="logo"
+        ><img
+          srcset="
+            images/Logga_sm.png  50w,
+            images/Logga.png     75w,
+            images/Logga_lg.png 100w
+          "
+          sizes="(max-width: 320px) 50px, (max-width: 640px) 75px, 100px"
+          class="rounded me-2 logo"
+          alt="logo"
       /></a>
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item active">
@@ -395,21 +403,27 @@
           </ul>
         </li>
       </ul>
-
+      <% if(oEchoForetag) { %>
       <div class="mr-5 mt-2 d-none d-sm-flex overflow-hidden">
         <p class="text-muted mx-2 font-italic" style="font-size: 0.9rem">
+          <!-- If statements -->
           <%=oEchoForetag.Namn%>
         </p>
         <p class="text-muted mx-2 font-italic" style="font-size: 0.9rem">
+          <!-- If Statements -->
           <%=oEchoForetag.Adr1%>
         </p>
         <p class="text-muted mx-2 font-italic" style="font-size: 0.9rem">
+          <!-- If Statements -->
           <%=oEchoForetag.PostNr%>
         </p>
         <p class="text-muted mx-2 font-italic" style="font-size: 0.9rem">
+          <!-- If Statements -->
           <%=oEchoForetag.Land%>
         </p>
       </div>
+      <% } %>
+
       <a
         role="button"
         class="btn btn-outline-success ml-auto"
@@ -651,6 +665,7 @@
               class="form-control"
               id="namnFormInput"
               placeholder="3PM IT AB"
+              required
             />
           </div>
           <div class="form-group">
@@ -678,6 +693,7 @@
               class="form-control"
               id="emailFormInput"
               placeholder="paul@3pm.se"
+              required
             />
           </div>
           <div class="form-group">
@@ -688,7 +704,7 @@
               rows="3"
             ></textarea>
           </div>
-          <button class="btn btn-success">Skicka</button>
+          <button type="submit" class="btn btn-success">Skicka</button>
           <button type="reset" class="btn btn-secondary">Rensa</button>
         </form>
       </section>
@@ -741,9 +757,9 @@
               <h3 class="text-uppercase fw-bold mb-4 footer-header">
                 3pm it AB
               </h3>
-              <p><a href="#!" class="text-reset">Dalavägen 13 A</a></p>
-              <p><a href="#!" class="text-reset">192 77 Sollentuna</a></p>
-              <p><a href="#!" class="text-reset">Sverige</a></p>
+              <p><i href="#!" class="text-reset">Dalavägen 13 A</i></p>
+              <p><i href="#!" class="text-reset">192 77 Sollentuna</i></p>
+              <p><i href="#!" class="text-reset">Sverige</i></p>
             </div>
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
               <h3 class="text-uppercase fw-bold mb-4 footer-header">Kontakt</h3>
